@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .display-4{
+              text-align: center;
+              font-family: arial;
+            }
+
+            .div {
+                
+                padding: 150px;
+                margin: 50px;
+            }
+            .card {
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              max-width: 300px;
+              margin: auto;
+              text-align: center;
+              font-family: arial;
+            }
+        
+            .title {
+              color: grey;
+              font-size: 18px;
+            }
+        
+            button {
+              border: none;
+              outline: 0;
+              display: inline-block;
+              padding: 8px;
+              color: white;
+              background-color: #000;
+              text-align: center;
+              cursor: pointer;
+              width: 100%;
+              font-size: 18px;
+            }
+
+            .home_btn {
+              padding-left: 48%;
+            }
+
+            .my-4{
+              padding-left: 40%;
+            }
+        
+            button:hover,
+            a:hover {
+              opacity: 0.7;
+            }
+        
+            .grid-container {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              padding: 10px;
+            }
+        
+            a:link {
+              text-decoration: none;
+            }
+        
+            a {
+              color: white;
+            }
+          </style>
+        
+    </head>
+    <body>
+        {% include "hospital/navbar.html" %}
+        <div class="div" style="margin-bottom: 0px;margin-top: 0px;">
+            <h1 class="display-4" text-align="center">Medical services offered:</h1><br>
+            <p class="lead">We are a group of medical doctors who treats common medical and chronic conditions. We also offer vaccinations as a measure of preventive care and provide health education for patients of all ages. As with most occupations, general practitioners need to have great interpersonal and communication skills and should be able to interact easily with their patients, who range from infants to the elderly.</p><br>
+            <p> 
+                <ul class="lead">
+                    <li>Immunization</li>
+                    <li>Follow-up care</li>
+                    <li>Routine health examinations</li>
+                    <li>Chronic Disease Management </li>
+                    <li>Specialist referrals</li>
+                    <li>The treatment of sports injuries</li>
+                    <li>Allergy tests and treatments</li>
+                </ul>
+            </p>
+            <div class="my-4">
+              <h3>Explore our Website.</h3>
+            </div>
+            <p class="home_btn">
+              <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+            </p>
+        </div>
+        {% include "hospital/footer.html" %}
+    </body>
+</html>

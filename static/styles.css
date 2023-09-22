@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
+body {
+    /*text-align: center;*/
+    padding: 40px 0;
+    background: #EBF0F5;
+}
+
+h1 {
+    color: #88B04B;
+    font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #404F5E;
+    font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+    font-size:20px;
+    margin: 0;
+}
+
+.card i{
+    color: #9ABC66;
+    font-size: 100px;
+    line-height: 200px;
+    margin-left:-15px;
+}
+
+.card {
+    text-align: center;
+    background: white;
+    padding: 60px;
+    border-radius: 4px;
+    box-shadow: 0 2px 3px #C8D0D8;
+    display: inline-block;
+    margin: 100px auto;
+}
+
+:root{
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --pink: #e5345b;
+}
+body{
+    font-family: var(--sm-font);
+}
+.btnSubmit{
+    color:whitesmoke;
+    background-color: #88B04B;
+    width: 40%;
+    margin: 0 0 0 420px;
+}
+/* button */
+.bg-primary{
+    background-color: var(--pink)!important;
+}
+
+.btn:not(.nav-btns button){
+    background-color: #fff;
+    color: rgb(85, 85, 85);
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid rgb(85, 85, 85);
+}
+.btn:not(.nav-btns button):hover{
+    background-color: var(--pink);
+    color: #fff;
+    border-color: var(--pink);
+}
+
+/* text color */
+.text-primary{
+    color: var(--pink)!important;
+}
+
+/* navbar */
+.navbar{
+    -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand img{
+    width: 30px;
+}
+.navbar-brand span{
+    letter-spacing: 2px;
+    font-family: var(--lg-font);
+}
+.nav-link:hover{
+    color: var(--pink)!important;
+}
+.nav-item{
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+*/
+/* footer */
+footer .brand{
+    font-family: var(--lg-font);
+    letter-spacing: 2px;
+}
+footer a{
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+footer a:hover{
+    color: var(--pink)!important;
+}
+
+/* media queries */
+@media(min-width: 992px){
+    .nav-item{
+        border-bottom: none;
+    }
+}

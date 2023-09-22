@@ -1,0 +1,81 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .display-4{
+          text-align: center;
+          font-family: arial;
+        }
+
+        .div {
+            
+            padding: 150px;
+            margin: 50px;
+        }
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          max-width: 60%;
+          margin: auto;
+          text-align: center;
+          font-family: arial;
+        }
+    
+        .title {
+          color: grey;
+          font-size: 18px;
+        }
+    
+        button {
+          border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+          font-size: 18px;
+        }
+    
+        button:hover,
+        a:hover {
+          opacity: 0.7;
+        }
+    
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          padding: 10px;
+        }
+    
+        a:link {
+          text-decoration: none;
+        }
+    
+        a {
+          color: white;
+        }
+      </style>
+    
+</head>
+<body>
+    {% include "hospital/navbar.html" %}
+    <div class="div" style="margin-bottom: 0px;margin-top: 0px;">
+        <h1 class="display-4" text-align="center">Medical aids that are accepted:</h1><br>
+        <div class="card">
+          <img src="{% static "images/medical-scheme.jpg" %}" alt="John" style="width:100%">
+         
+        </div>
+       
+        <hr class="my-4">
+        <p>Explore our Website.</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+        </p>
+    </div>
+    {% include "hospital/footer.html" %}
+</body>
+</html>
+
+    

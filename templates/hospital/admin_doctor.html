@@ -1,0 +1,250 @@
+{% extends 'hospital/admin_base.html' %}
+{% load static %}
+{% block content %}
+<br><br>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+  <style type="text/css">
+
+.col-md-8{
+  padding-left: 100px;
+
+}
+.card-container {
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.card.view-appointment {
+  background-color: #337ab7;
+  color: #fff;
+}
+
+.card.book-appointment {
+  background-color: #5cb85c;
+  color: #fff;
+}
+
+.card.approve-appointment {
+  background-color: #f0ad4e;
+  color: #fff;
+}
+
+.card .icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+  /* body {
+      display: flex;
+      justify-content: center;
+      align-items:center ;
+      min-height: 100vh;
+      background: #000;
+      animation: color 1s linear infinite;
+  } */
+  @keyframes color {
+      0% {
+          filter: hue-rotate(0deg);
+      }
+      100% {
+          filter: hue-rotate(360deg);
+      }
+  }
+  .card {
+      width: 300px;
+      height: 250px;
+      background: rgb(26, 24, 24);
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      text-align:justify;
+      transition: 0.5s;
+      animation: color 1s linear infinite;
+  }
+  .icon {
+      background:linear-gradient(45deg, #30284e,rgb(243, 40, 4)) ;
+      padding: 30px 35px;
+      font-size: 30px;
+      width: fit-content;
+      border-radius: 50%;
+      text-align: center;
+      align-items:center ;
+      margin: 10px auto;
+      color: #fff;
+
+  }
+  .tittle {
+      color: #fff;
+      font-size: 1.7rem;
+      margin: 10px auto;
+     
+  }
+  .text {
+      color: #fff;
+      font-size: 1rem;
+      margin: 10px auto;
+      display: none;
+      transition: 0.5s;
+  }
+  .card:hover .icon {
+      background:linear-gradient(45deg, #30284e,#f09) ;
+     
+  }
+  .card:hover .text {
+      display: block;
+  }
+  .card:hover {
+      transform: translateY(-10px);
+  }
+
+ /* heartbeat */
+
+.container{
+margin: 0 auto;
+text-align: center;
+}
+.heart-rate{
+width: 150px;
+height: 73px;
+position: relative;
+margin: 20px auto;
+}
+.fade-in{
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: white;
+top: 0;
+right: 0;
+animation: heartRateIn 2.5s linear infinite;
+}
+
+.fade-out{
+position: absolute;
+width: 120%;
+height: 100%;
+background-color: white;
+top: 0;
+right: -120%;
+animation: heartRateOut 2.5s linear infinite;
+background: rgb(245, 237, 237);
+background: linear-gradient(to right,rgb(253, 253, 253)0%, rgb(243, 235, 235)80%,rgba(235, 234, 234, 0)100%);
+}
+
+@keyframes heartRateIn{
+0%{
+  width: 100%;
+}
+50%{
+  width: 0;
+}
+100%{
+  width: 0;
+}
+}
+@keyframes heartRateOut{
+0%{
+  left: -120%;
+}
+30%{
+  left: -120%;
+}
+100%{
+  left: 0;
+}
+
+}
+  </style>
+</head>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Doctor page</li>
+        </ol>
+      </nav>
+    </div> 
+  </div>
+</div>
+
+<div class="container">
+  <div class="row"> 
+    <div class="col-md-6 col-xl-3">
+      <a href="/admin-add-doctor" class="card-container">
+        <div class="card view-appointment">
+          <div class="icon"><i class="fas fa-calendar f-left"></i></div>
+          <div class="title">Register Doctor</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-8 col-xl-3">
+      <a href="/admin-approve-doctor" class="card-container">
+        <div class="card book-appointment">
+          <div class="icon"><i class="fas fa-book-medical f-left"></i></div>
+          <div class="title">Approve Doctor</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!--<div class="panel">
+    <div class="panel-heading">
+      <h6 class="panel-title">Doctors</h6>
+    </div>-->
+    <table class="table table-bordered table-striped table-hover" id="dev-table">
+      <thead>
+        <tr>
+
+          <th>Name</th>
+          <th>Profile Picture</th>
+          <th>Contact</th>
+          <th>Address</th>
+          <th>Department</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      {% for d in doctors %}
+      <tr>
+
+        <td> {{d.get_name}}</td>
+        <td> <img src="{% static d.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+        <td>{{d.mobile}}</td>
+        <td>{{d.address}}</td>
+        <td>{{d.department}}</td>
+        <td><a class="btn btn-primary btn-xs" href="{% url 'update-doctor' d.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-doctor-from-hospital' d.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+<!--</div>-->
+
+<br><br><br><br><br><br><br>
+{% endblock content %}
+{% include "hospital/footer.html" %}
